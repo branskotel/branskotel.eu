@@ -1,0 +1,838 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact BranskoTel - Get Your Quote Today</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="animations.css">
+    <style>
+        /* Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f8f8;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header Styles */
+        .header {
+            background: #fff;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+
+        .logo {
+            height: 50px;
+            width: auto;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: #ff6600;
+        }
+
+        /* Language Selector */
+        .language-selector {
+            position: relative;
+            margin: 0 1rem;
+        }
+
+        .language-selector select {
+            background: linear-gradient(135deg, #fff, #f8f8f8);
+            border: 2px solid #e5e5e5;
+            border-radius: 12px;
+            padding: 10px 35px 10px 15px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: #333;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            appearance: none;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+            min-width: 120px;
+        }
+
+        .language-selector select:hover {
+            border-color: #ff6600;
+            box-shadow: 0 4px 12px rgba(255, 102, 0, 0.15);
+            transform: translateY(-1px);
+        }
+
+        .language-selector select:focus {
+            outline: none;
+            border-color: #ff6600;
+            box-shadow: 0 0 0 3px rgba(255, 102, 0, 0.1), 0 4px 12px rgba(255, 102, 0, 0.15);
+        }
+
+        .language-selector::after {
+            content: '🌐';
+            position: absolute;
+            right: 12px;
+            top: 50%;
+            transform: translateY(-50%);
+            pointer-events: none;
+            font-size: 1.1rem;
+        }
+
+        .language-selector option {
+            padding: 8px 12px;
+            background: white;
+            color: #333;
+            font-weight: 500;
+        }
+
+        .cta-button {
+            background: #ff6600;
+            color: white !important;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            display: inline-block;
+        }
+
+        .cta-button:hover {
+            background: #e55a00;
+            color: white !important;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(255, 102, 0, 0.3);
+        }
+
+        .mobile-menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: #333;
+            cursor: pointer;
+        }
+
+        /* Page Header */
+        .page-header {
+            background: white;
+            padding: 60px 0;
+            text-align: center;
+        }
+
+        .page-header h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            color: #333;
+            margin-bottom: 1rem;
+        }
+
+        .page-header p {
+            font-size: 1.25rem;
+            color: #666;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Contact Section */
+        .contact-section {
+            padding: 80px 0;
+            background: #f8f8f8;
+        }
+
+        .contact-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: start;
+        }
+
+        .contact-form {
+            background: white;
+            padding: 3rem;
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+        }
+
+        .contact-form h2 {
+            font-size: 1.75rem;
+            font-weight: 600;
+            margin-bottom: 2rem;
+            color: #333;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            color: #333;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px 16px;
+            border: 2px solid #e5e5e5;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #ff6600;
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        /* Contact Info */
+        .contact-info {
+            padding: 2rem 0;
+        }
+
+        .contact-info h2 {
+            font-size: 1.75rem;
+            font-weight: 600;
+            margin-bottom: 2rem;
+            color: #333;
+        }
+
+        .contact-methods {
+            margin-bottom: 3rem;
+        }
+
+        .contact-method {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 12px;
+            margin-bottom: 1rem;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+        }
+
+        .contact-method:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+
+        .contact-method i {
+            color: #ff6600;
+            margin-right: 1rem;
+            width: 20px;
+            font-size: 1.25rem;
+        }
+
+        .contact-method span {
+            color: #333;
+            font-weight: 500;
+        }
+
+        .contact-method a {
+            color: #ff6600;
+            text-decoration: none;
+        }
+
+        .contact-method a:hover {
+            text-decoration: underline;
+        }
+
+        /* WhatsApp Button */
+        .whatsapp-button {
+            background: #25D366;
+            color: white;
+            padding: 15px 25px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            transition: all 0.3s ease;
+            margin-bottom: 2rem;
+        }
+
+        .whatsapp-button:hover {
+            background: #1ebf5c;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(37, 211, 102, 0.3);
+        }
+
+        .whatsapp-button i {
+            font-size: 1.25rem;
+        }
+
+        /* Map Section */
+        .map-section {
+            background: white;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            height: 300px;
+        }
+
+        .map-section iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        /* Footer */
+        .footer {
+            background: #333;
+            color: white;
+            padding: 3rem 0 2rem;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .footer-links a {
+            color: #ccc;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: #ff6600;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid #555;
+            color: #ccc;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: white;
+                flex-direction: column;
+                padding: 1rem;
+                box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            }
+
+            .language-selector {
+                order: -1;
+                margin: 0 0.5rem 0 0;
+            }
+
+            .language-selector select {
+                padding: 8px 30px 8px 12px;
+                font-size: 0.8rem;
+                min-width: 100px;
+            }
+
+            .language-selector::after {
+                right: 8px;
+                font-size: 1rem;
+            }
+
+            .mobile-menu-toggle {
+                display: block;
+            }
+
+            .page-header h1 {
+                font-size: 2.5rem;
+            }
+
+            .contact-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .contact-form {
+                padding: 2rem;
+            }
+
+            .footer-content {
+                flex-direction: column;
+                gap: 2rem;
+                text-align: center;
+            }
+
+            .footer-links {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 15px;
+            }
+
+            .page-header h1 {
+                font-size: 2rem;
+            }
+
+            .contact-form {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <!-- Logo -->
+                <div class="logo-container">
+                    <img src="branskotel.png" alt="BranskoTel" class="logo">
+                </div>
+
+                <!-- Navigation -->
+                <nav>
+                    <ul class="nav-links">
+                        <li><a href="index.html" data-translate="nav.home">Home</a></li>
+                        <li><a href="shop.html" data-translate="nav.shop">Shop</a></li>
+                        <li><a href="about.html" data-translate="nav.about">About</a></li>
+                        <li><a href="contact.html" data-translate="nav.contact">Contact</a></li>
+                        <li><a href="privacy.html" data-translate="nav.privacy">Privacy Policy</a></li>
+                        <li><a href="contact.html" class="cta-button" data-translate="nav.quote">Request Wholesale Quote</a></li>
+                    </ul>
+                    <div class="language-selector">
+                        <select id="languageSelect" onchange="changeLanguage(this.value)">
+                            <option value="en">🇬🇧 English</option>
+                            <option value="pl">🇵🇱 Polski</option>
+                            <option value="fr">🇫🇷 Français</option>
+                            <option value="ar">🇸🇦 العربية</option>
+                            <option value="cs">🇨🇿 Čeština</option>
+                        </select>
+                    </div>
+                    <button class="mobile-menu-toggle">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1 data-translate="contact.pageTitle">Contact BranskoTel</h1>
+            <p data-translate="contact.pageSubtitle">Have a question or need a quote? Get in touch and our team will respond quickly.</p>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section">
+        <div class="container">
+            <div class="contact-content">
+                <!-- Contact Form -->
+                <div class="contact-form">
+                    <h2 data-translate="contact.formTitle">Send us a Message</h2>
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="name" data-translate="contact.nameLabel">Name</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email" data-translate="contact.emailLabel">Email</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone" data-translate="contact.phoneLabel">Phone</label>
+                            <input type="tel" id="phone" name="phone">
+                        </div>
+                        <div class="form-group">
+                            <label for="message" data-translate="contact.messageLabel">Message</label>
+                            <textarea id="message" name="message" data-translate-placeholder="contact.messagePlaceholder" placeholder="Tell us about your requirements, quantities, or any questions you have..." required></textarea>
+                        </div>
+                        <button type="submit" class="cta-button" style="width: 100%;" data-translate="contact.sendButton">Send Message</button>
+                    </form>
+                </div>
+
+                <!-- Contact Info -->
+                <div class="contact-info">
+                    <h2 data-translate="contact.getInTouch">Get in Touch</h2>
+                    
+                    <a href="https://wa.me/48531896407" class="whatsapp-button" target="_blank">
+                        <i class="fab fa-whatsapp"></i>
+                        <span data-translate="contact.whatsappButton">Chat on WhatsApp</span>
+                    </a>
+
+                    <div class="contact-methods">
+                        <div class="contact-method">
+                            <i class="fas fa-envelope"></i>
+                            <span><span data-translate="contact.emailLabel">Email</span>: <a href="mailto:Brankotel.eu@gmail.com">Brankotel.eu@gmail.com</a></span>
+                        </div>
+                        
+                        <div class="contact-method">
+                            <i class="fas fa-phone"></i>
+                            <span><span data-translate="contact.phoneLabel">Phone</span>: <a href="tel:+48531896407">+48 531 896 407</a></span>
+                        </div>
+                        
+                        <div class="contact-method">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span><span data-translate="contact.location">Location</span>: Os. Dywizjonu 303 21 lok. 64, 31-873 Kraków, Poland</span>
+                        </div>
+                        
+                        <div class="contact-method">
+                            <i class="fas fa-clock"></i>
+                            <span><span data-translate="contact.hours">Hours</span>: <span data-translate="contact.hoursDetails">Mon - Fri: 9:00 AM - 6:00 PM CET</span></span>
+                        </div>
+
+                        <div class="contact-method">
+                            <i class="fas fa-id-card"></i>
+                            <span>NIP: 8212626889 | REGON: 123181756</span>
+                        </div>
+                    </div>
+
+                    <!-- Map -->
+                    <div class="map-section">
+                        <iframe 
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2561.2!2d19.9349444!3d50.0946501!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47165b0e6b2e5a5b%3A0x123456789abcdef0!2sOs.%20Dywizjonu%20303%2021%2C%2031-873%20Krak%C3%B3w%2C%20Poland!5e0!3m2!1sen!2sus!4v1698612345678!5m2!1sen!2sus"
+                            allowfullscreen="" 
+                            loading="lazy" 
+                            referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="logo-container">
+                    <img src="branskotel.png" alt="BranskoTel" class="logo" style="filter: brightness(0) invert(1);">
+                </div>
+                <nav>
+                    <ul class="footer-links">
+                        <li><a href="index.html" data-translate="nav.home">Home</a></li>
+                        <li><a href="shop.html" data-translate="nav.shop">Shop</a></li>
+                        <li><a href="about.html" data-translate="nav.about">About</a></li>
+                        <li><a href="contact.html" data-translate="nav.contact">Contact</a></li>
+                        <li><a href="privacy.html" data-translate="nav.privacy">Privacy Policy</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 BranskoTel.eu — All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Mobile menu toggle
+        document.querySelector('.mobile-menu-toggle').addEventListener('click', function() {
+            const navLinks = document.querySelector('.nav-links');
+            navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
+        });
+
+        // Contact form submission
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form data
+            const formData = new FormData(this);
+            const name = formData.get('name');
+            const email = formData.get('email');
+            const phone = formData.get('phone') || 'Not provided';
+            const message = formData.get('message');
+            
+            // Get current language
+            const currentLang = document.getElementById('languageSelect').value || 'en';
+            
+            // Simple validation
+            if (name && email && message) {
+                // Create email content
+                const subject = `Contact from ${name} - BranskoTel Inquiry`;
+                const body = `Hello BranskoTel Team,
+
+I am contacting you regarding your products and services.
+
+Name: ${name}
+Email: ${email}
+Phone: ${phone}
+
+Message:
+${message}
+
+Best regards,
+${name}`;
+
+                // Create mailto link
+                const mailtoLink = `mailto:Brankotel.eu@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+                
+                // Open email client
+                window.location.href = mailtoLink;
+                
+                // Show success message in current language
+                const successMessage = translations[currentLang]['contact.emailSuccess'] || translations['en']['contact.emailSuccess'];
+                alert(successMessage);
+                
+                // Reset form after a short delay
+                setTimeout(() => {
+                    this.reset();
+                }, 1000);
+            } else {
+                // Show error message in current language
+                const errorMessage = translations[currentLang]['contact.fillRequired'] || translations['en']['contact.fillRequired'];
+                alert(errorMessage);
+            }
+        });
+    </script>
+    <script src="script.js"></script>
+    
+    <!-- Translation System -->
+    <script>
+        // Comprehensive translation dictionary for contact page
+        const translations = {
+            en: {
+                'nav.home': 'Home',
+                'nav.shop': 'Shop',
+                'nav.about': 'About',
+                'nav.contact': 'Contact',
+                'nav.privacy': 'Privacy Policy',
+                'nav.quote': 'Request Wholesale Quote',
+                'contact.pageTitle': 'Contact BranskoTel',
+                'contact.pageSubtitle': 'Have a question or need a quote? Get in touch and our team will respond quickly.',
+                'contact.formTitle': 'Send us a Message',
+                'contact.nameLabel': 'Name',
+                'contact.emailLabel': 'Email',
+                'contact.phoneLabel': 'Phone',
+                'contact.messageLabel': 'Message',
+                'contact.messagePlaceholder': 'Tell us about your requirements, quantities, or any questions you have...',
+                'contact.sendButton': 'Send Message',
+                'contact.getInTouch': 'Get in Touch',
+                'contact.whatsappButton': 'Chat on WhatsApp',
+                'contact.location': 'Location',
+                'contact.hours': 'Hours',
+                'contact.hoursDetails': 'Mon - Fri: 9:00 AM - 6:00 PM CET',
+                'contact.emailSuccess': 'Opening your email client... Please send the message to complete your inquiry.',
+                'contact.fillRequired': 'Please fill in all required fields (Name, Email, and Message).'
+            },
+            pl: {
+                'nav.home': 'Strona główna',
+                'nav.shop': 'Sklep',
+                'nav.about': 'O nas',
+                'nav.contact': 'Kontakt',
+                'nav.privacy': 'Polityka prywatności',
+                'nav.quote': 'Poproś o wycenę hurtową',
+                'contact.pageTitle': 'Kontakt z BranskoTel',
+                'contact.pageSubtitle': 'Masz pytanie lub potrzebujesz wyceny? Skontaktuj się z nami, a nasz zespół szybko odpowie.',
+                'contact.formTitle': 'Wyślij nam wiadomość',
+                'contact.nameLabel': 'Imię',
+                'contact.emailLabel': 'Email',
+                'contact.phoneLabel': 'Telefon',
+                'contact.messageLabel': 'Wiadomość',
+                'contact.messagePlaceholder': 'Opowiedz nam o swoich wymaganiach, ilościach lub wszelkich pytaniach...',
+                'contact.sendButton': 'Wyślij wiadomość',
+                'contact.getInTouch': 'Skontaktuj się z nami',
+                'contact.whatsappButton': 'Czat na WhatsApp',
+                'contact.location': 'Lokalizacja',
+                'contact.hours': 'Godziny',
+                'contact.hoursDetails': 'Pon - Pt: 9:00 - 18:00 CET',
+                'contact.emailSuccess': 'Otwieranie klienta poczty elektronicznej... Proszę wysłać wiadomość, aby zakończyć zapytanie.',
+                'contact.fillRequired': 'Proszę wypełnić wszystkie wymagane pola (Imię, Email i Wiadomość).'
+            },
+            fr: {
+                'nav.home': 'Accueil',
+                'nav.shop': 'Boutique',
+                'nav.about': 'À propos',
+                'nav.contact': 'Contact',
+                'nav.privacy': 'Politique de confidentialité',
+                'nav.quote': 'Demander un devis de gros',
+                'contact.pageTitle': 'Contacter BranskoTel',
+                'contact.pageSubtitle': 'Vous avez une question ou besoin d\'un devis? Contactez-nous et notre équipe répondra rapidement.',
+                'contact.formTitle': 'Envoyez-nous un message',
+                'contact.nameLabel': 'Nom',
+                'contact.emailLabel': 'Email',
+                'contact.phoneLabel': 'Téléphone',
+                'contact.messageLabel': 'Message',
+                'contact.messagePlaceholder': 'Parlez-nous de vos exigences, quantités ou toute question que vous avez...',
+                'contact.sendButton': 'Envoyer le message',
+                'contact.getInTouch': 'Entrez en contact',
+                'contact.whatsappButton': 'Chat sur WhatsApp',
+                'contact.location': 'Localisation',
+                'contact.hours': 'Horaires',
+                'contact.hoursDetails': 'Lun - Ven: 9h00 - 18h00 CET',
+                'contact.emailSuccess': 'Ouverture de votre client email... Veuillez envoyer le message pour compléter votre demande.',
+                'contact.fillRequired': 'Veuillez remplir tous les champs obligatoires (Nom, Email et Message).'
+            },
+            ar: {
+                'nav.home': 'الرئيسية',
+                'nav.shop': 'المتجر',
+                'nav.about': 'من نحن',
+                'nav.contact': 'اتصل بنا',
+                'nav.privacy': 'سياسة الخصوصية',
+                'nav.quote': 'طلب عرض أسعار الجملة',
+                'contact.pageTitle': 'اتصل بـ BranskoTel',
+                'contact.pageSubtitle': 'لديك سؤال أو تحتاج عرض أسعار؟ تواصل معنا وسيرد فريقنا بسرعة.',
+                'contact.formTitle': 'أرسل لنا رسالة',
+                'contact.nameLabel': 'الاسم',
+                'contact.emailLabel': 'البريد الإلكتروني',
+                'contact.phoneLabel': 'الهاتف',
+                'contact.messageLabel': 'الرسالة',
+                'contact.messagePlaceholder': 'أخبرنا عن متطلباتك أو الكميات أو أي أسئلة لديك...',
+                'contact.sendButton': 'إرسال الرسالة',
+                'contact.getInTouch': 'تواصل معنا',
+                'contact.whatsappButton': 'الدردشة على واتساب',
+                'contact.location': 'الموقع',
+                'contact.hours': 'ساعات العمل',
+                'contact.hoursDetails': 'الاثنين - الجمعة: 9:00 صباحاً - 6:00 مساءً CET',
+                'contact.emailSuccess': 'فتح عميل البريد الإلكتروني... يرجى إرسال الرسالة لإكمال استفسارك.',
+                'contact.fillRequired': 'يرجى ملء جميع الحقول المطلوبة (الاسم والبريد الإلكتروني والرسالة).'
+            },
+            cs: {
+                'nav.home': 'Domů',
+                'nav.shop': 'Obchod',
+                'nav.about': 'O nás',
+                'nav.contact': 'Kontakt',
+                'nav.privacy': 'Zásady ochrany osobních údajů',
+                'nav.quote': 'Požádat o velkoobchodní nabídku',
+                'contact.pageTitle': 'Kontaktujte BranskoTel',
+                'contact.pageSubtitle': 'Máte otázku nebo potřebujete nabídku? Ozvěte se nám a náš tým rychle odpoví.',
+                'contact.formTitle': 'Pošlete nám zprávu',
+                'contact.nameLabel': 'Jméno',
+                'contact.emailLabel': 'Email',
+                'contact.phoneLabel': 'Telefon',
+                'contact.messageLabel': 'Zpráva',
+                'contact.messagePlaceholder': 'Řekněte nám o svých požadavcích, množstvích nebo jakýchkoli otázkách...',
+                'contact.sendButton': 'Odeslat zprávu',
+                'contact.getInTouch': 'Spojte se s námi',
+                'contact.whatsappButton': 'Chat na WhatsApp',
+                'contact.location': 'Umístění',
+                'contact.hours': 'Hodiny',
+                'contact.hoursDetails': 'Po - Pá: 9:00 - 18:00 CET',
+                'contact.emailSuccess': 'Otevírání vašeho emailového klienta... Prosím odešlete zprávu pro dokončení vašeho dotazu.',
+                'contact.fillRequired': 'Prosím vyplňte všechna povinná pole (Jméno, Email a Zpráva).'
+            }
+        };
+
+        // Language detection and switching function
+        function changeLanguage(language) {
+            // Update HTML lang attribute for SEO
+            document.documentElement.lang = language;
+            
+            // Update page title for SEO
+            const titles = {
+                en: 'Contact BranskoTel - Get Your Quote Today',
+                pl: 'Kontakt z BranskoTel - Uzyskaj wycenę już dziś',
+                fr: 'Contacter BranskoTel - Obtenez votre devis aujourd\'hui',
+                ar: 'اتصل بـ BranskoTel - احصل على عرض الأسعار اليوم',
+                cs: 'Kontaktujte BranskoTel - Získejte svou nabídku dnes'
+            };
+            document.title = titles[language];
+
+            // Apply translations to all elements with data-translate attribute
+            const elements = document.querySelectorAll('[data-translate]');
+            elements.forEach(element => {
+                const key = element.getAttribute('data-translate');
+                if (translations[language] && translations[language][key]) {
+                    element.textContent = translations[language][key];
+                }
+            });
+
+            // Handle placeholder translations
+            const placeholderElements = document.querySelectorAll('[data-translate-placeholder]');
+            placeholderElements.forEach(element => {
+                const key = element.getAttribute('data-translate-placeholder');
+                if (translations[language] && translations[language][key]) {
+                    element.placeholder = translations[language][key];
+                }
+            });
+
+            // Handle RTL for Arabic
+            if (language === 'ar') {
+                document.body.style.direction = 'rtl';
+                document.body.style.textAlign = 'right';
+            } else {
+                document.body.style.direction = 'ltr';
+                document.body.style.textAlign = 'left';
+            }
+
+            // Save language preference
+            localStorage.setItem('selectedLanguage', language);
+            
+            // Update URL for SEO (optional)
+            const url = new URL(window.location);
+            url.searchParams.set('lang', language);
+            window.history.replaceState({}, '', url);
+        }
+
+        // Initialize language on page load
+        function initializeLanguage() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const urlLang = urlParams.get('lang');
+            const savedLang = localStorage.getItem('selectedLanguage');
+            const browserLang = navigator.language.split('-')[0];
+            
+            // Priority: URL parameter > saved preference > browser language > English
+            const defaultLang = urlLang || savedLang || (translations[browserLang] ? browserLang : 'en');
+            
+            document.getElementById('languageSelect').value = defaultLang;
+            changeLanguage(defaultLang);
+        }
+
+        // Initialize when page loads
+        document.addEventListener('DOMContentLoaded', initializeLanguage);
+    </script>
+</body>
+</html>

@@ -1,0 +1,1063 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BranskoTel.eu - Your Trusted Partner for Mobile Phones & Electronics</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="animations.css">
+    <style>
+        /* Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #fff;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header Styles */
+        .header {
+            background: #fff;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            padding: 1rem 0;
+            transition: all 0.3s ease;
+        }
+
+        .header-flex {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo img {
+            height: 40px;
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-menu a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-menu a:hover {
+            color: #ff6600;
+        }
+
+        .quote-btn {
+            background: #ff6600;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .quote-btn:hover {
+            background: #e85b00;
+            box-shadow: 0 4px 10px rgba(255, 102, 0, 0.3);
+        }
+
+        /* Language Selector */
+        .language-selector {
+            position: relative;
+            margin: 0 1rem;
+        }
+
+        .language-selector select {
+            background: linear-gradient(135deg, #fff, #f8f8f8);
+            border: 2px solid #e5e5e5;
+            border-radius: 12px;
+            padding: 10px 35px 10px 15px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: #333;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            appearance: none;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+            min-width: 120px;
+        }
+
+        .language-selector select:hover {
+            border-color: #ff6600;
+            box-shadow: 0 4px 12px rgba(255, 102, 0, 0.15);
+            transform: translateY(-1px);
+        }
+
+        .language-selector select:focus {
+            outline: none;
+            border-color: #ff6600;
+            box-shadow: 0 0 0 3px rgba(255, 102, 0, 0.1), 0 4px 12px rgba(255, 102, 0, 0.15);
+        }
+
+        .language-selector::after {
+            content: '🌐';
+            position: absolute;
+            right: 12px;
+            top: 50%;
+            transform: translateY(-50%);
+            pointer-events: none;
+            font-size: 1.1rem;
+        }
+
+        .language-selector option {
+            padding: 8px 12px;
+            background: white;
+            color: #333;
+            font-weight: 500;
+        }
+
+        /* Mobile Menu */
+        .mobile-menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: #333;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: url('Hero.png') no-repeat center right;
+            background-size: cover;
+            background-color: #f8f8f8;
+            min-height: 80vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+        }
+
+        .hero-flex {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            height: 100%;
+            width: 100%;
+        }
+
+        .hero-text {
+            max-width: 500px;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 2.5rem;
+            border-radius: 16px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.12);
+            text-align: left;
+            margin-left: 0;
+            position: relative;
+            z-index: 10;
+        }
+
+        .hero-text h1 {
+            font-size: 2.4rem;
+            line-height: 1.3;
+            color: #222;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-text p {
+            color: #555;
+            margin-bottom: 2rem;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .cta-btn {
+            background: #ff6600;
+            color: #fff;
+            padding: 12px 28px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .cta-btn:hover {
+            background: #e55a00;
+            transform: translateY(-2px);
+        }
+
+        .cta-btn.outline {
+            background: transparent;
+            color: #ff6600;
+            border: 2px solid #ff6600;
+        }
+
+        .cta-btn.outline:hover {
+            background: #ff6600;
+            color: white;
+        }
+
+        .hero-image {
+            display: none;
+        }        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        /* Section Styles */
+        .section {
+            padding: 80px 0;
+            background: white;
+        }
+
+        .section.gray {
+            background: #f8f8f8;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 3rem;
+            color: #333;
+        }
+
+        /* About Section */
+        .about-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .about-content p {
+            font-size: 1.125rem;
+            line-height: 1.8;
+            color: #666;
+        }
+
+        /* Products Section */
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .product-card {
+            background: white;
+            border-radius: 16px;
+            padding: 2rem;
+            text-align: center;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+        }
+
+        .product-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 40px rgba(0,0,0,0.15);
+        }
+
+        .product-card img {
+            width: 100%;
+            max-width: 200px;
+            height: 200px;
+            object-fit: contain;
+            margin-bottom: 1.5rem;
+            border-radius: 8px;
+        }
+
+        .product-icon {
+            width: 120px;
+            height: 120px;
+            margin: 0 auto 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #ff6600, #e55a00);
+            border-radius: 50%;
+            box-shadow: 0 8px 25px rgba(255, 102, 0, 0.3);
+        }
+
+        .product-icon i {
+            font-size: 3.5rem;
+            color: white;
+        }
+
+        .product-card h3 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: #333;
+        }
+
+        .product-card .view-more {
+            background: transparent;
+            color: #ff6600;
+            border: 2px solid #ff6600;
+            padding: 8px 20px;
+            border-radius: 8px;
+            font-weight: 500;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+
+        .product-card .view-more:hover {
+            background: #ff6600;
+            color: white;
+        }
+
+        /* Why Choose Us Section */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .feature-item {
+            text-align: center;
+            padding: 2rem;
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+        }
+
+        .feature-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+        }
+
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .feature-item h3 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: #333;
+        }
+
+        .feature-item p {
+            color: #666;
+            font-size: 1rem;
+        }
+
+        /* Contact Section */
+        .contact-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: start;
+        }
+
+        .contact-form {
+            background: white;
+            padding: 2rem;
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            color: #333;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px 16px;
+            border: 2px solid #e5e5e5;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #ff6600;
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .contact-info {
+            padding: 2rem 0;
+        }
+
+        .contact-info h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            color: #333;
+        }
+
+        .contact-detail {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1rem;
+            font-size: 1.125rem;
+            color: #666;
+        }
+
+        .contact-detail i {
+            margin-right: 1rem;
+            color: #ff6600;
+            width: 20px;
+        }
+
+        /* Footer */
+        .footer {
+            background: #333;
+            color: white;
+            padding: 3rem 0 2rem;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .footer-links a {
+            color: #ccc;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: #ff6600;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid #555;
+            color: #ccc;
+        }
+
+        /* Responsive Design */
+            @media (max-width: 768px) {
+                .nav-menu {
+                    display: none;
+                    position: absolute;
+                    top: 100%;
+                    left: 0;
+                    right: 0;
+                    background: white;
+                    flex-direction: column;
+                    padding: 1rem;
+                    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+                }
+
+                .language-selector {
+                    order: -1;
+                    margin: 0 0.5rem 0 0;
+                }
+
+                .language-selector select {
+                    padding: 8px 30px 8px 12px;
+                    font-size: 0.8rem;
+                    min-width: 100px;
+                }
+
+                .language-selector::after {
+                    right: 8px;
+                    font-size: 1rem;
+                }
+
+                .quote-btn {
+                    display: none;
+                }
+
+                .mobile-menu-toggle {
+                    display: block;
+                }
+
+                .hero {
+                    background-position: center;
+                    background-size: cover;
+                    background-repeat: no-repeat;
+                    min-height: 70vh;
+                    padding: 2rem 0;
+                    display: flex;
+                    align-items: center;
+                }
+
+                .hero-flex {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    width: 100%;
+                }
+
+                .hero-text {
+                    background: rgba(255, 255, 255, 0.95);
+                    position: relative;
+                    top: auto;
+                    left: auto;
+                    right: auto;
+                    padding: 2rem;
+                    margin: 0 1rem;
+                    max-width: none;
+                    width: calc(100% - 2rem);
+                }
+
+                .hero-text h1 {
+                    font-size: 1.8rem;
+                }
+
+                .contact-content {
+                    grid-template-columns: 1fr;
+                }
+
+                .footer-content {
+                    flex-direction: column;
+                    gap: 2rem;
+                    text-align: center;
+                }
+
+                .footer-links {
+                    flex-wrap: wrap;
+                    justify-content: center;
+                }
+            }        @media (max-width: 480px) {
+            .container {
+                padding: 0 15px;
+            }
+
+            .hero-text h1 {
+                font-size: 1.8rem;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .cta-btn {
+                width: 100%;
+                text-align: center;
+            }
+        }
+
+        /* Smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Animation for cards */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate-on-scroll {
+            animation: fadeInUp 0.6s ease-out;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header class="header">
+        <div class="container header-flex">
+            <a href="index.html" class="logo">
+                <img src="branskotel.png" alt="BranskoTel.eu" />
+            </a>
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="index.html" data-translate="nav.home">Home</a></li>
+                    <li><a href="shop.html" data-translate="nav.shop">Shop</a></li>
+                    <li><a href="about.html" data-translate="nav.about">About Us</a></li>
+                    <li><a href="contact.html" data-translate="nav.contact">Contact</a></li>
+                    <li><a href="privacy.html" data-translate="nav.privacy">Privacy Policy</a></li>
+                </ul>
+            </nav>
+            <div class="language-selector">
+                <select id="languageSelect" onchange="changeLanguage(this.value)">
+                    <option value="en">🇬🇧 English</option>
+                    <option value="pl">🇵🇱 Polski</option>
+                    <option value="fr">🇫🇷 Français</option>
+                    <option value="ar">🇸🇦 العربية</option>
+                    <option value="cs">🇨🇿 Čeština</option>
+                </select>
+            </div>
+            <a href="contact.html" class="quote-btn" data-translate="nav.quote">Request Wholesale Quote</a>
+            <button class="mobile-menu-toggle">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container hero-flex">
+            <div class="hero-text">
+                <h1 data-translate="hero.title">Your Trusted Partner for Wholesale & Retail Mobile Phones and Electronics</h1>
+                <p data-translate="hero.subtitle">Shop premium smartphones, accessories, and devices at competitive wholesale prices.</p>
+                <div class="hero-buttons">
+                    <a href="shop.html" class="cta-btn" data-translate="hero.explore">Explore Products</a>
+                    <a href="contact.html" class="cta-btn outline" data-translate="hero.quote">Get a Quote</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section gray">
+        <div class="container">
+            <h2 class="section-title" data-translate="about.title">About BranskoTel</h2>
+            <div class="about-content">
+                <p data-translate="about.description">BranskoTel.eu is a Europe-based supplier of mobile phones and electronics, offering both wholesale and single-unit sales. We specialize in iPhones, Android smartphones, tablets, and accessories. Our mission is to provide reliable, affordable, and high-quality devices to partners and individuals across the EU.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Preview Section -->
+    <section id="products" class="section">
+        <div class="container">
+            <h2 class="section-title" data-translate="products.title">Our Products</h2>
+            <div class="products-grid">
+                <!-- iPhone Card -->
+                <div class="product-card">
+                    <div class="product-icon">
+                        <i class="fab fa-apple"></i>
+                    </div>
+                    <h3 data-translate="products.iphones.title">iPhones</h3>
+                    <p data-translate="products.iphones.description">Latest iPhone 15 Pro, Pro Max, and standard versions. Authentic devices with full manufacturer warranty and EU compliance.</p>
+                    <a href="shop.html" class="view-more" data-translate="products.viewMore">View More</a>
+                </div>
+
+                <!-- Android Phones Card -->
+                <div class="product-card">
+                    <div class="product-icon">
+                        <i class="fab fa-android"></i>
+                    </div>
+                    <h3 data-translate="products.android.title">Android Phones</h3>
+                    <p data-translate="products.android.description">Premium Samsung Galaxy S24, Google Pixel, OnePlus, and other flagship Android smartphones with latest 5G technology.</p>
+                    <a href="shop.html" class="view-more" data-translate="products.viewMore">View More</a>
+                </div>
+
+                <!-- Tablets Card -->
+                <div class="product-card">
+                    <div class="product-icon">
+                        <i class="fas fa-tablet-alt"></i>
+                    </div>
+                    <h3 data-translate="products.tablets.title">Tablets & Accessories</h3>
+                    <p data-translate="products.tablets.description">iPad Pro, iPad Air, Samsung Galaxy Tab S9, premium cases, wireless chargers, and professional accessories.</p>
+                    <a href="shop.html" class="view-more" data-translate="products.viewMore">View More</a>
+                </div>
+
+                <!-- Smartwatches Card -->
+                <div class="product-card">
+                    <div class="product-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <h3 data-translate="products.smartwatches.title">Smartwatches</h3>
+                    <p data-translate="products.smartwatches.description">Apple Watch Series 9, Samsung Galaxy Watch 6, fitness trackers and premium wearable technology devices.</p>
+                    <a href="shop.html" class="view-more" data-translate="products.viewMore">View More</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us Section -->
+    <section class="section gray">
+        <div class="container">
+            <h2 class="section-title">Why Choose BranskoTel?</h2>
+            <div class="features-grid">
+                <div class="feature-item">
+                    <div class="feature-icon">🛡️</div>
+                    <h3>Trusted Partner</h3>
+                    <p>Years of experience serving customers across Europe with authentic products and reliable service.</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">🚚</div>
+                    <h3>Fast Delivery</h3>
+                    <p>Quick and secure shipping across the EU with tracking and insurance for your peace of mind.</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">�</div>
+                    <h3>Easy Communication</h3>
+                    <p>Responsive support team ready to assist with quotes, orders, and any questions you may have.</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">🇪🇺</div>
+                    <h3>Based in Europe</h3>
+                    <p>EU-based operations ensuring compliance with European standards and seamless business relationships.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section">
+        <div class="container">
+            <h2 class="section-title">Get in Touch</h2>
+            <div class="contact-content">
+                <!-- Contact Form -->
+                <div class="contact-form">
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" placeholder="Tell us about your requirements..." required></textarea>
+                        </div>
+                        <button type="submit" class="cta-btn" style="width: 100%;">Send Inquiry</button>
+                    </form>
+                </div>
+
+                <!-- Contact Info -->
+                <div class="contact-info">
+                    <h3>Contact Information</h3>
+                    <div class="contact-detail">
+                        <i class="fas fa-envelope"></i>
+                        <span>Brankotel.eu@gmail.com</span>
+                    </div>
+                    <div class="contact-detail">
+                        <i class="fas fa-phone"></i>
+                        <span>+48 531 896 407</span>
+                    </div>
+                    <div class="contact-detail">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Os. Dywizjonu 303 21 lok. 64, 31-873 Kraków, Poland</span>
+                    </div>
+                    <div class="contact-detail">
+                        <i class="fas fa-clock"></i>
+                        <span>Mon - Fri: 9:00 AM - 6:00 PM CET</span>
+                    </div>
+                    <div class="contact-detail">
+                        <i class="fas fa-id-card"></i>
+                        <span>NIP: 8212626889 | REGON: 123181756</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="logo-container">
+                    <img src="branskotel.png" alt="BranskoTel" style="height: 40px; filter: brightness(0) invert(1);">
+                </div>
+                <nav>
+                    <ul class="footer-links">
+                        <li><a href="index.html" data-translate="nav.home">Home</a></li>
+                        <li><a href="shop.html" data-translate="nav.shop">Shop</a></li>
+                        <li><a href="about.html" data-translate="nav.about">About</a></li>
+                        <li><a href="contact.html" data-translate="nav.contact">Contact</a></li>
+                        <li><a href="privacy.html" data-translate="nav.privacy">Privacy Policy</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 BranskoTel.eu — All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript for interactivity -->
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Contact form submission
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form data
+            const formData = new FormData(this);
+            const name = formData.get('name');
+            const email = formData.get('email');
+            const message = formData.get('message');
+            
+            // Simple validation
+            if (name && email && message) {
+                alert('Thank you for your message! We will get back to you soon.');
+                this.reset();
+            } else {
+                alert('Please fill in all fields.');
+            }
+        });
+
+        // Mobile menu toggle (basic functionality)
+        document.querySelector('.mobile-menu-toggle').addEventListener('click', function() {
+            const navMenu = document.querySelector('.nav-menu');
+            navMenu.style.display = navMenu.style.display === 'flex' ? 'none' : 'flex';
+        });
+
+        // Add animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate-on-scroll');
+                }
+            });
+        }, observerOptions);
+
+        // Observe all product cards and feature items
+        document.querySelectorAll('.product-card, .feature-item').forEach(el => {
+            observer.observe(el);
+        });
+    </script>
+    <script src="script.js"></script>
+    
+    <!-- Translation System -->
+    <script>
+        // Comprehensive translation dictionary
+        const translations = {
+            en: {
+                'nav.home': 'Home',
+                'nav.shop': 'Shop',
+                'nav.about': 'About Us',
+                'nav.contact': 'Contact',
+                'nav.privacy': 'Privacy Policy',
+                'nav.quote': 'Request Wholesale Quote',
+                'hero.title': 'Your Trusted Partner for Wholesale & Retail Mobile Phones and Electronics',
+                'hero.subtitle': 'Shop premium smartphones, accessories, and devices at competitive wholesale prices.',
+                'hero.explore': 'Explore Products',
+                'hero.quote': 'Get a Quote',
+                'about.title': 'About BranskoTel',
+                'about.description': 'BranskoTel.eu is a Europe-based supplier of mobile phones and electronics, offering both wholesale and single-unit sales. We specialize in iPhones, Android smartphones, tablets, and accessories. Our mission is to provide reliable, affordable, and high-quality devices to partners and individuals across the EU.',
+                'products.title': 'Our Products',
+                'products.iphones.title': 'iPhones',
+                'products.iphones.description': 'Latest iPhone 15 Pro, Pro Max, and standard versions. Authentic devices with full manufacturer warranty and EU compliance.',
+                'products.android.title': 'Android Phones',
+                'products.android.description': 'Premium Samsung Galaxy S24, Google Pixel, OnePlus, and other flagship Android smartphones with latest 5G technology.',
+                'products.tablets.title': 'Tablets & Accessories',
+                'products.tablets.description': 'iPad Pro, iPad Air, Samsung Galaxy Tab S9, premium cases, wireless chargers, and professional accessories.',
+                'products.smartwatches.title': 'Smartwatches',
+                'products.smartwatches.description': 'Apple Watch Series 9, Samsung Galaxy Watch 6, fitness trackers and premium wearable technology devices.',
+                'products.viewMore': 'View More'
+            },
+            pl: {
+                'nav.home': 'Strona główna',
+                'nav.shop': 'Sklep',
+                'nav.about': 'O nas',
+                'nav.contact': 'Kontakt',
+                'nav.privacy': 'Polityka prywatności',
+                'nav.quote': 'Poproś o wycenę hurtową',
+                'hero.title': 'Twój zaufany partner w handlu telefonami komórkowymi i elektroniką',
+                'hero.subtitle': 'Kupuj premium smartfony, akcesoria i urządzenia w konkurencyjnych cenach hurtowych.',
+                'hero.explore': 'Przeglądaj produkty',
+                'hero.quote': 'Uzyskaj wycenę',
+                'about.title': 'O BranskoTel',
+                'about.description': 'BranskoTel.eu to europejski dostawca telefonów komórkowych i elektroniki, oferujący sprzedaż hurtową i detaliczną. Specjalizujemy się w iPhone\'ach, smartfonach Android, tabletach i akcesoriach. Naszą misją jest dostarczanie niezawodnych, przystępnych cenowo i wysokiej jakości urządzeń partnerom i osobom prywatnym w całej UE.',
+                'products.title': 'Nasze produkty',
+                'products.iphones.title': 'iPhone\'y',
+                'products.iphones.description': 'Najnowsze iPhone 15 Pro, Pro Max i wersje standardowe. Oryginalne urządzenia z pełną gwarancją producenta i zgodnością z UE.',
+                'products.android.title': 'Telefony Android',
+                'products.android.description': 'Premium Samsung Galaxy S24, Google Pixel, OnePlus i inne flagowe smartfony Android z najnowszą technologią 5G.',
+                'products.tablets.title': 'Tablety i akcesoria',
+                'products.tablets.description': 'iPad Pro, iPad Air, Samsung Galaxy Tab S9, premium etui, ładowarki bezprzewodowe i profesjonalne akcesoria.',
+                'products.smartwatches.title': 'Smartwatche',
+                'products.smartwatches.description': 'Apple Watch Series 9, Samsung Galaxy Watch 6, trackery fitness i premium urządzenia noszone.',
+                'products.viewMore': 'Zobacz więcej'
+            },
+            fr: {
+                'nav.home': 'Accueil',
+                'nav.shop': 'Boutique',
+                'nav.about': 'À propos',
+                'nav.contact': 'Contact',
+                'nav.privacy': 'Politique de confidentialité',
+                'nav.quote': 'Demander un devis de gros',
+                'hero.title': 'Votre partenaire de confiance pour les téléphones mobiles et l\'électronique en gros et au détail',
+                'hero.subtitle': 'Achetez des smartphones premium, accessoires et appareils à des prix de gros compétitifs.',
+                'hero.explore': 'Explorer les produits',
+                'hero.quote': 'Obtenir un devis',
+                'about.title': 'À propos de BranskoTel',
+                'about.description': 'BranskoTel.eu est un fournisseur européen de téléphones mobiles et d\'électronique, offrant des ventes en gros et à l\'unité. Nous nous spécialisons dans les iPhones, smartphones Android, tablettes et accessoires. Notre mission est de fournir des appareils fiables, abordables et de haute qualité aux partenaires et particuliers à travers l\'UE.',
+                'products.title': 'Nos produits',
+                'products.iphones.title': 'iPhones',
+                'products.iphones.description': 'Derniers iPhone 15 Pro, Pro Max et versions standard. Appareils authentiques avec garantie fabricant complète et conformité UE.',
+                'products.android.title': 'Téléphones Android',
+                'products.android.description': 'Premium Samsung Galaxy S24, Google Pixel, OnePlus et autres smartphones Android phares avec dernière technologie 5G.',
+                'products.tablets.title': 'Tablettes et accessoires',
+                'products.tablets.description': 'iPad Pro, iPad Air, Samsung Galaxy Tab S9, étuis premium, chargeurs sans fil et accessoires professionnels.',
+                'products.smartwatches.title': 'Montres connectées',
+                'products.smartwatches.description': 'Apple Watch Series 9, Samsung Galaxy Watch 6, trackers fitness et appareils portables premium.',
+                'products.viewMore': 'Voir plus'
+            },
+            ar: {
+                'nav.home': 'الرئيسية',
+                'nav.shop': 'المتجر',
+                'nav.about': 'من نحن',
+                'nav.contact': 'اتصل بنا',
+                'nav.privacy': 'سياسة الخصوصية',
+                'nav.quote': 'طلب عرض أسعار الجملة',
+                'hero.title': 'شريكك الموثوق في الهواتف المحمولة والإلكترونيات بالجملة والتجزئة',
+                'hero.subtitle': 'تسوق هواتف ذكية مميزة وإكسسوارات وأجهزة بأسعار جملة تنافسية.',
+                'hero.explore': 'استكشف المنتجات',
+                'hero.quote': 'احصل على عرض سعر',
+                'about.title': 'حول BranskoTel',
+                'about.description': 'BranskoTel.eu هو مورد أوروبي للهواتف المحمولة والإلكترونيات، يقدم مبيعات بالجملة والوحدة الواحدة. نحن متخصصون في أجهزة iPhone وهواتف Android الذكية والأجهزة اللوحية والإكسسوارات. مهمتنا هي توفير أجهزة موثوقة وبأسعار معقولة وعالية الجودة للشركاء والأفراد في جميع أنحاء الاتحاد الأوروبي.',
+                'products.title': 'منتجاتنا',
+                'products.iphones.title': 'أجهزة iPhone',
+                'products.iphones.description': 'أحدث iPhone 15 Pro و Pro Max والإصدارات القياسية. أجهزة أصلية مع ضمان الشركة المصنعة الكامل والامتثال للاتحاد الأوروبي.',
+                'products.android.title': 'هواتف Android',
+                'products.android.description': 'هواتف Samsung Galaxy S24 المميزة و Google Pixel و OnePlus وهواتف Android الذكية الرائدة الأخرى مع أحدث تقنية 5G.',
+                'products.tablets.title': 'الأجهزة اللوحية والإكسسوارات',
+                'products.tablets.description': 'iPad Pro و iPad Air و Samsung Galaxy Tab S9 وحافظات مميزة وشواحن لاسلكية وإكسسوارات احترافية.',
+                'products.smartwatches.title': 'الساعات الذكية',
+                'products.smartwatches.description': 'Apple Watch Series 9 و Samsung Galaxy Watch 6 وأجهزة تتبع اللياقة البدنية وأجهزة قابلة للارتداء مميزة.',
+                'products.viewMore': 'عرض المزيد'
+            },
+            cs: {
+                'nav.home': 'Domů',
+                'nav.shop': 'Obchod',
+                'nav.about': 'O nás',
+                'nav.contact': 'Kontakt',
+                'nav.privacy': 'Zásady ochrany osobních údajů',
+                'nav.quote': 'Požádat o velkoobchodní nabídku',
+                'hero.title': 'Váš důvěryhodný partner pro mobilní telefony a elektroniku ve velkém i maloobchodě',
+                'hero.subtitle': 'Nakupujte prémiové smartphony, příslušenství a zařízení za konkurenční velkoobchodní ceny.',
+                'hero.explore': 'Prozkoumat produkty',
+                'hero.quote': 'Získat nabídku',
+                'about.title': 'O BranskoTel',
+                'about.description': 'BranskoTel.eu je evropský dodavatel mobilních telefonů a elektroniky, nabízející velkoobchodní i jednotkový prodej. Specializujeme se na iPhony, chytré telefony Android, tablety a příslušenství. Naším posláním je poskytovat spolehlivá, cenově dostupná a vysoce kvalitní zařízení partnerům a jednotlivcům po celé EU.',
+                'products.title': 'Naše produkty',
+                'products.iphones.title': 'iPhony',
+                'products.iphones.description': 'Nejnovější iPhone 15 Pro, Pro Max a standardní verze. Autentická zařízení s plnou zárukou výrobce a soulad s EU.',
+                'products.android.title': 'Android telefony',
+                'products.android.description': 'Prémiové Samsung Galaxy S24, Google Pixel, OnePlus a další vlajkové Android smartphony s nejnovější 5G technologií.',
+                'products.tablets.title': 'Tablety a příslušenství',
+                'products.tablets.description': 'iPad Pro, iPad Air, Samsung Galaxy Tab S9, prémiové pouzdra, bezdrátové nabíječky a profesionální příslušenství.',
+                'products.smartwatches.title': 'Chytré hodinky',
+                'products.smartwatches.description': 'Apple Watch Series 9, Samsung Galaxy Watch 6, fitness trackery a prémiová nositelná zařízení.',
+                'products.viewMore': 'Zobrazit více'
+            }
+        };
+
+        // Language detection and switching function
+        function changeLanguage(language) {
+            // Update HTML lang attribute for SEO
+            document.documentElement.lang = language;
+            
+            // Update page title for SEO
+            const titles = {
+                en: 'BranskoTel.eu - Your Trusted Partner for Mobile Phones & Electronics',
+                pl: 'BranskoTel.eu - Twój zaufany partner w telefonach komórkowych i elektronice',
+                fr: 'BranskoTel.eu - Votre partenaire de confiance pour téléphones mobiles et électronique',
+                ar: 'BranskoTel.eu - شريكك الموثوق في الهواتف المحمولة والإلكترونيات',
+                cs: 'BranskoTel.eu - Váš důvěryhodný partner pro mobilní telefony a elektroniku'
+            };
+            document.title = titles[language];
+
+            // Apply translations to all elements with data-translate attribute
+            const elements = document.querySelectorAll('[data-translate]');
+            elements.forEach(element => {
+                const key = element.getAttribute('data-translate');
+                if (translations[language] && translations[language][key]) {
+                    element.textContent = translations[language][key];
+                }
+            });
+
+            // Handle RTL for Arabic
+            if (language === 'ar') {
+                document.body.style.direction = 'rtl';
+                document.body.style.textAlign = 'right';
+            } else {
+                document.body.style.direction = 'ltr';
+                document.body.style.textAlign = 'left';
+            }
+
+            // Save language preference
+            localStorage.setItem('selectedLanguage', language);
+            
+            // Update URL for SEO (optional)
+            const url = new URL(window.location);
+            url.searchParams.set('lang', language);
+            window.history.replaceState({}, '', url);
+        }
+
+        // Initialize language on page load
+        function initializeLanguage() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const urlLang = urlParams.get('lang');
+            const savedLang = localStorage.getItem('selectedLanguage');
+            const browserLang = navigator.language.split('-')[0];
+            
+            // Priority: URL parameter > saved preference > browser language > English
+            const defaultLang = urlLang || savedLang || (translations[browserLang] ? browserLang : 'en');
+            
+            document.getElementById('languageSelect').value = defaultLang;
+            changeLanguage(defaultLang);
+        }
+
+        // Initialize when page loads
+        document.addEventListener('DOMContentLoaded', initializeLanguage);
+    </script>
+</body>
+</html>

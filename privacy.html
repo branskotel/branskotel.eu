@@ -1,0 +1,698 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy - BranskoTel</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="animations.css">
+    <style>
+        /* Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f8f8;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header Styles */
+        .header {
+            background: #fff;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #ff6600;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: #ff6600;
+        }
+
+        /* Language Selector */
+        .language-selector {
+            position: relative;
+            margin: 0 1rem;
+        }
+
+        .language-selector select {
+            background: linear-gradient(135deg, #fff, #f8f8f8);
+            border: 2px solid #e5e5e5;
+            border-radius: 12px;
+            padding: 10px 35px 10px 15px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: #333;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            appearance: none;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+            min-width: 120px;
+        }
+
+        .language-selector select:hover {
+            border-color: #ff6600;
+            box-shadow: 0 4px 12px rgba(255, 102, 0, 0.15);
+            transform: translateY(-1px);
+        }
+
+        .language-selector select:focus {
+            outline: none;
+            border-color: #ff6600;
+            box-shadow: 0 0 0 3px rgba(255, 102, 0, 0.1), 0 4px 12px rgba(255, 102, 0, 0.15);
+        }
+
+        .language-selector::after {
+            content: '🌐';
+            position: absolute;
+            right: 12px;
+            top: 50%;
+            transform: translateY(-50%);
+            pointer-events: none;
+            font-size: 1.1rem;
+        }
+
+        .language-selector option {
+            padding: 8px 12px;
+            background: white;
+            color: #333;
+            font-weight: 500;
+        }
+
+        .mobile-menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: #333;
+            cursor: pointer;
+        }
+
+        /* Main Content */
+        .main-content {
+            background: #fff;
+            min-height: calc(100vh - 140px);
+        }
+
+        .page-header {
+            background: linear-gradient(135deg, #ff6600 0%, #e55a00 100%);
+            color: white;
+            padding: 4rem 0;
+            text-align: center;
+        }
+
+        .page-header h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .page-header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Privacy Content */
+        .privacy-content {
+            padding: 5rem 0;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .privacy-section {
+            margin-bottom: 3rem;
+            background: white;
+            padding: 2.5rem;
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+        }
+
+        .privacy-section h2 {
+            font-size: 1.8rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            color: #333;
+            border-bottom: 2px solid #ff6600;
+            padding-bottom: 0.5rem;
+        }
+
+        .privacy-section h3 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            margin-top: 2rem;
+            color: #333;
+        }
+
+        .privacy-section p {
+            font-size: 1rem;
+            line-height: 1.8;
+            margin-bottom: 1rem;
+            color: #666;
+        }
+
+        .privacy-section ul {
+            margin-left: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .privacy-section li {
+            font-size: 1rem;
+            line-height: 1.8;
+            margin-bottom: 0.5rem;
+            color: #666;
+        }
+
+        .contact-highlight {
+            background: #ff6600;
+            color: white;
+            padding: 2rem;
+            border-radius: 12px;
+            text-align: center;
+            margin: 3rem 0;
+        }
+
+        .contact-highlight h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .contact-highlight p {
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+        }
+
+        .contact-highlight a {
+            color: white;
+            text-decoration: underline;
+            font-weight: 500;
+        }
+
+        .contact-highlight a:hover {
+            text-decoration: none;
+        }
+
+        .last-updated {
+            background: #f8f8f8;
+            padding: 1.5rem;
+            border-radius: 8px;
+            text-align: center;
+            color: #666;
+            font-style: italic;
+        }
+
+        /* Footer */
+        .footer {
+            background: #333;
+            color: white;
+            padding: 3rem 0 2rem;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .footer-links a {
+            color: #ccc;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: #ff6600;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid #555;
+            color: #ccc;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: white;
+                flex-direction: column;
+                padding: 1rem;
+                box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            }
+
+            .language-selector {
+                order: -1;
+                margin: 0 0.5rem 0 0;
+            }
+
+            .language-selector select {
+                padding: 8px 30px 8px 12px;
+                font-size: 0.8rem;
+                min-width: 100px;
+            }
+
+            .language-selector::after {
+                right: 8px;
+                font-size: 1rem;
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .mobile-menu-toggle {
+                display: block;
+            }
+
+            .page-header h1 {
+                font-size: 2.5rem;
+            }
+
+            .privacy-content {
+                padding: 3rem 0;
+            }
+
+            .privacy-section {
+                padding: 2rem 1.5rem;
+            }
+
+            .footer-content {
+                flex-direction: column;
+                gap: 2rem;
+                text-align: center;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 15px;
+            }
+
+            .page-header h1 {
+                font-size: 2rem;
+            }
+
+            .privacy-section {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <a href="index.html" class="logo">
+                    <img src="branskotel.png" alt="BranskoTel" style="height: 40px; width: auto;">
+                </a>
+                <nav>
+                    <ul class="nav-links">
+                        <li><a href="index.html" data-translate="nav.home">Home</a></li>
+                        <li><a href="shop.html" data-translate="nav.shop">Shop</a></li>
+                        <li><a href="about.html" data-translate="nav.about">About</a></li>
+                        <li><a href="contact.html" data-translate="nav.contact">Contact</a></li>
+                        <li><a href="privacy.html" class="active" data-translate="nav.privacy">Privacy Policy</a></li>
+                    </ul>
+                    <div class="language-selector">
+                        <select id="languageSelect" onchange="changeLanguage(this.value)">
+                            <option value="en">🇬🇧 English</option>
+                            <option value="pl">🇵🇱 Polski</option>
+                            <option value="fr">🇫🇷 Français</option>
+                            <option value="ar">🇸🇦 العربية</option>
+                            <option value="cs">🇨🇿 Čeština</option>
+                        </select>
+                    </div>
+                    <button class="mobile-menu-toggle">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Page Header -->
+        <section class="page-header">
+            <div class="container">
+                <h1 data-translate="privacy.pageTitle">Privacy Policy</h1>
+                <p data-translate="privacy.pageSubtitle">Your privacy and data protection are important to us</p>
+            </div>
+        </section>
+
+        <!-- Privacy Content -->
+        <section class="privacy-content">
+            <div class="container">
+                
+                <!-- Introduction -->
+                <div class="privacy-section">
+                    <h2 data-translate="privacy.commitmentTitle">Our Commitment to Privacy</h2>
+                    <p data-translate="privacy.commitmentText1">BranskoTel.eu values your privacy and is committed to protecting your personal data. This privacy policy explains how we collect, use, and safeguard your information when you use our website and services.</p>
+                    
+                    <p data-translate="privacy.commitmentText2">We collect only the data needed to process your orders and improve service quality. Your information is never sold or shared with third parties except as required by law.</p>
+                    
+                    <p data-translate="privacy.commitmentText3">We use secure, encrypted communication for all transactions to ensure your data remains protected at all times.</p>
+                </div>
+
+                <!-- Information We Collect -->
+                <div class="privacy-section">
+                    <h2>Information We Collect</h2>
+                    
+                    <h3>Personal Information</h3>
+                    <p>When you interact with our services, we may collect:</p>
+                    <ul>
+                        <li>Name and contact information (email, phone number)</li>
+                        <li>Company details for wholesale inquiries</li>
+                        <li>Shipping and billing addresses</li>
+                        <li>Communication preferences</li>
+                    </ul>
+
+                    <h3>Technical Information</h3>
+                    <p>We automatically collect certain technical data:</p>
+                    <ul>
+                        <li>IP address and location data</li>
+                        <li>Browser type and version</li>
+                        <li>Device information</li>
+                        <li>Website usage patterns</li>
+                    </ul>
+                </div>
+
+                <!-- How We Use Information -->
+                <div class="privacy-section">
+                    <h2>How We Use Your Information</h2>
+                    <p>We use your personal data for the following purposes:</p>
+                    <ul>
+                        <li>Processing and fulfilling your orders</li>
+                        <li>Providing customer support and communication</li>
+                        <li>Improving our website and services</li>
+                        <li>Sending important updates about your orders</li>
+                        <li>Complying with legal obligations</li>
+                        <li>Preventing fraud and ensuring security</li>
+                    </ul>
+                </div>
+
+                <!-- Data Protection -->
+                <div class="privacy-section">
+                    <h2>Data Protection & Security</h2>
+                    <p>We implement robust security measures to protect your personal data:</p>
+                    <ul>
+                        <li>SSL encryption for all data transmission</li>
+                        <li>Secure servers with regular security updates</li>
+                        <li>Limited access to personal data on a need-to-know basis</li>
+                        <li>Regular security audits and monitoring</li>
+                        <li>Compliance with GDPR and other applicable regulations</li>
+                    </ul>
+                </div>
+
+                <!-- Data Sharing -->
+                <div class="privacy-section">
+                    <h2>Data Sharing & Third Parties</h2>
+                    <p>We do not sell or rent your personal information to third parties. We may share your data only in the following circumstances:</p>
+                    <ul>
+                        <li>With shipping partners to deliver your orders</li>
+                        <li>With payment processors for secure transactions</li>
+                        <li>When required by law or legal proceedings</li>
+                        <li>To protect our rights and prevent fraud</li>
+                        <li>With your explicit consent</li>
+                    </ul>
+                </div>
+
+                <!-- Your Rights -->
+                <div class="privacy-section">
+                    <h2>Your Privacy Rights</h2>
+                    <p>Under GDPR and other applicable laws, you have the right to:</p>
+                    <ul>
+                        <li>Access your personal data we hold</li>
+                        <li>Correct inaccurate or incomplete information</li>
+                        <li>Request deletion of your personal data</li>
+                        <li>Restrict processing of your data</li>
+                        <li>Data portability</li>
+                        <li>Object to processing based on legitimate interests</li>
+                        <li>Withdraw consent at any time</li>
+                    </ul>
+                </div>
+
+                <!-- Cookies -->
+                <div class="privacy-section">
+                    <h2>Cookies & Tracking</h2>
+                    <p>We use cookies and similar technologies to:</p>
+                    <ul>
+                        <li>Remember your preferences and settings</li>
+                        <li>Analyze website traffic and user behavior</li>
+                        <li>Improve website functionality and user experience</li>
+                        <li>Provide personalized content and recommendations</li>
+                    </ul>
+                    <p>You can control cookie settings through your browser preferences. Disabling cookies may affect website functionality.</p>
+                </div>
+
+                <!-- Updates -->
+                <div class="privacy-section">
+                    <h2>Policy Updates</h2>
+                    <p>We may update this privacy policy periodically to reflect changes in our practices or legal requirements. We will notify you of significant changes by:</p>
+                    <ul>
+                        <li>Posting the updated policy on our website</li>
+                        <li>Sending email notifications for substantial changes</li>
+                        <li>Displaying prominent notices on our website</li>
+                    </ul>
+                </div>
+
+                <!-- Contact Information -->
+                <div class="contact-highlight">
+                    <h3>Privacy Questions?</h3>
+                    <p>For any privacy-related inquiries, data requests, or concerns, please contact us:</p>
+                    <p><strong>Email:</strong> <a href="mailto:Brankotel.eu@gmail.com">Brankotel.eu@gmail.com</a></p>
+                    <p><strong>General Contact:</strong> <a href="mailto:Brankotel.eu@gmail.com">Brankotel.eu@gmail.com</a></p>
+                </div>
+
+                <!-- Last Updated -->
+                <div class="last-updated">
+                    <p>This privacy policy was last updated on October 29, 2025</p>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <a href="index.html" class="logo">
+                    <img src="branskotel.png" alt="BranskoTel" style="height: 40px; width: auto; filter: brightness(0) invert(1);">
+                </a>
+                <nav>
+                    <ul class="footer-links">
+                        <li><a href="index.html" data-translate="nav.home">Home</a></li>
+                        <li><a href="shop.html" data-translate="nav.shop">Shop</a></li>
+                        <li><a href="about.html" data-translate="nav.about">About</a></li>
+                        <li><a href="contact.html" data-translate="nav.contact">Contact</a></li>
+                        <li><a href="privacy.html" data-translate="nav.privacy">Privacy Policy</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 BranskoTel.eu — All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Mobile menu toggle
+        document.querySelector('.mobile-menu-toggle').addEventListener('click', function() {
+            const navLinks = document.querySelector('.nav-links');
+            navLinks.classList.toggle('active');
+        });
+    </script>
+    <script src="script.js"></script>
+    
+    <!-- Translation System -->
+    <script>
+        // Simplified translation dictionary for privacy page (key headings only)
+        const translations = {
+            en: {
+                'nav.home': 'Home',
+                'nav.shop': 'Shop',
+                'nav.about': 'About',
+                'nav.contact': 'Contact',
+                'nav.privacy': 'Privacy Policy',
+                'privacy.pageTitle': 'Privacy Policy',
+                'privacy.pageSubtitle': 'Your privacy and data protection are important to us',
+                'privacy.commitmentTitle': 'Our Commitment to Privacy',
+                'privacy.commitmentText1': 'BranskoTel.eu values your privacy and is committed to protecting your personal data. This privacy policy explains how we collect, use, and safeguard your information when you use our website and services.',
+                'privacy.commitmentText2': 'We collect only the data needed to process your orders and improve service quality. Your information is never sold or shared with third parties except as required by law.',
+                'privacy.commitmentText3': 'We use secure, encrypted communication for all transactions to ensure your data remains protected at all times.'
+            },
+            pl: {
+                'nav.home': 'Strona główna',
+                'nav.shop': 'Sklep',
+                'nav.about': 'O nas',
+                'nav.contact': 'Kontakt',
+                'nav.privacy': 'Polityka prywatności',
+                'privacy.pageTitle': 'Polityka prywatności',
+                'privacy.pageSubtitle': 'Twoja prywatność i ochrona danych są dla nas ważne',
+                'privacy.commitmentTitle': 'Nasze zobowiązanie do prywatności',
+                'privacy.commitmentText1': 'BranskoTel.eu ceni Twoją prywatność i jest zobowiązany do ochrony Twoich danych osobowych. Ta polityka prywatności wyjaśnia, jak gromadzimy, używamy i chronimy Twoje informacje podczas korzystania z naszej strony internetowej i usług.',
+                'privacy.commitmentText2': 'Gromadzimy tylko dane potrzebne do przetwarzania Twoich zamówień i poprawy jakości usług. Twoje informacje nigdy nie są sprzedawane ani udostępniane stronom trzecim, z wyjątkiem przypadków wymaganych przez prawo.',
+                'privacy.commitmentText3': 'Używamy bezpiecznej, szyfrowanej komunikacji dla wszystkich transakcji, aby zapewnić, że Twoje dane pozostają chronione przez cały czas.'
+            },
+            fr: {
+                'nav.home': 'Accueil',
+                'nav.shop': 'Boutique',
+                'nav.about': 'À propos',
+                'nav.contact': 'Contact',
+                'nav.privacy': 'Politique de confidentialité',
+                'privacy.pageTitle': 'Politique de confidentialité',
+                'privacy.pageSubtitle': 'Votre vie privée et la protection des données sont importantes pour nous',
+                'privacy.commitmentTitle': 'Notre engagement envers la confidentialité',
+                'privacy.commitmentText1': 'BranskoTel.eu valorise votre vie privée et s\'engage à protéger vos données personnelles. Cette politique de confidentialité explique comment nous collectons, utilisons et protégeons vos informations lorsque vous utilisez notre site web et services.',
+                'privacy.commitmentText2': 'Nous collectons seulement les données nécessaires pour traiter vos commandes et améliorer la qualité du service. Vos informations ne sont jamais vendues ou partagées avec des tiers sauf si requis par la loi.',
+                'privacy.commitmentText3': 'Nous utilisons une communication sécurisée et cryptée pour toutes les transactions afin de garantir que vos données restent protégées en tout temps.'
+            },
+            ar: {
+                'nav.home': 'الرئيسية',
+                'nav.shop': 'المتجر',
+                'nav.about': 'من نحن',
+                'nav.contact': 'اتصل بنا',
+                'nav.privacy': 'سياسة الخصوصية',
+                'privacy.pageTitle': 'سياسة الخصوصية',
+                'privacy.pageSubtitle': 'خصوصيتك وحماية البيانات مهمة بالنسبة لنا',
+                'privacy.commitmentTitle': 'التزامنا بالخصوصية',
+                'privacy.commitmentText1': 'تقدر BranskoTel.eu خصوصيتك وملتزمة بحماية بياناتك الشخصية. تشرح سياسة الخصوصية هذه كيف نجمع ونستخدم ونحمي معلوماتك عند استخدام موقعنا الإلكتروني وخدماتنا.',
+                'privacy.commitmentText2': 'نجمع فقط البيانات اللازمة لمعالجة طلباتك وتحسين جودة الخدمة. لا يتم بيع معلوماتك أو مشاركتها مع أطراف ثالثة إلا عند الضرورة القانونية.',
+                'privacy.commitmentText3': 'نستخدم اتصالات آمنة ومشفرة لجميع المعاملات لضمان بقاء بياناتك محمية في جميع الأوقات.'
+            },
+            cs: {
+                'nav.home': 'Domů',
+                'nav.shop': 'Obchod',
+                'nav.about': 'O nás',
+                'nav.contact': 'Kontakt',
+                'nav.privacy': 'Zásady ochrany osobních údajů',
+                'privacy.pageTitle': 'Zásady ochrany osobních údajů',
+                'privacy.pageSubtitle': 'Vaše soukromí a ochrana dat jsou pro nás důležité',
+                'privacy.commitmentTitle': 'Náš závazek k soukromí',
+                'privacy.commitmentText1': 'BranskoTel.eu si váží vašeho soukromí a je zavázán chránit vaše osobní údaje. Tyto zásady ochrany osobních údajů vysvětlují, jak shromažďujeme, používáme a chráníme vaše informace při používání našich webových stránek a služeb.',
+                'privacy.commitmentText2': 'Shromažďujeme pouze data potřebná k zpracování vašich objednávek a zlepšení kvality služeb. Vaše informace nejsou nikdy prodány nebo sdíleny se třetími stranami, kromě případů požadovaných zákonem.',
+                'privacy.commitmentText3': 'Používáme bezpečnou, šifrovanou komunikaci pro všechny transakce, abychom zajistili, že vaše data zůstanou chráněna po celou dobu.'
+            }
+        };
+
+        // Language detection and switching function
+        function changeLanguage(language) {
+            // Update HTML lang attribute for SEO
+            document.documentElement.lang = language;
+            
+            // Update page title for SEO
+            const titles = {
+                en: 'Privacy Policy - BranskoTel',
+                pl: 'Polityka prywatności - BranskoTel',
+                fr: 'Politique de confidentialité - BranskoTel',
+                ar: 'سياسة الخصوصية - BranskoTel',
+                cs: 'Zásady ochrany osobních údajů - BranskoTel'
+            };
+            document.title = titles[language];
+
+            // Apply translations to all elements with data-translate attribute
+            const elements = document.querySelectorAll('[data-translate]');
+            elements.forEach(element => {
+                const key = element.getAttribute('data-translate');
+                if (translations[language] && translations[language][key]) {
+                    element.textContent = translations[language][key];
+                }
+            });
+
+            // Handle RTL for Arabic
+            if (language === 'ar') {
+                document.body.style.direction = 'rtl';
+                document.body.style.textAlign = 'right';
+            } else {
+                document.body.style.direction = 'ltr';
+                document.body.style.textAlign = 'left';
+            }
+
+            // Save language preference
+            localStorage.setItem('selectedLanguage', language);
+            
+            // Update URL for SEO (optional)
+            const url = new URL(window.location);
+            url.searchParams.set('lang', language);
+            window.history.replaceState({}, '', url);
+        }
+
+        // Initialize language on page load
+        function initializeLanguage() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const urlLang = urlParams.get('lang');
+            const savedLang = localStorage.getItem('selectedLanguage');
+            const browserLang = navigator.language.split('-')[0];
+            
+            // Priority: URL parameter > saved preference > browser language > English
+            const defaultLang = urlLang || savedLang || (translations[browserLang] ? browserLang : 'en');
+            
+            document.getElementById('languageSelect').value = defaultLang;
+            changeLanguage(defaultLang);
+        }
+
+        // Initialize when page loads
+        document.addEventListener('DOMContentLoaded', initializeLanguage);
+    </script>
+</body>
+</html>

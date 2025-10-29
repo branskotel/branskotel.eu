@@ -1,0 +1,15 @@
+<!-- This is a placeholder for branskotel.png -->
+<!-- You should replace this with your actual branskotel.png logo file -->
+<!-- For now, we'll create an SVG fallback that will display "BranskoTel" as text -->
+
+<!-- To use this: -->
+<!-- 1. Add your branskotel.png file to the project folder -->
+<!-- 2. This will automatically be used by the website -->
+
+<!-- If you don't have the PNG file yet, you can create one or: -->
+<!-- Use this SVG temporarily by renaming this file to branskotel.svg and updating the HTML -->
+
+<svg width="200" height="50" viewBox="0 0 200 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="200" height="50" fill="#ff6600" rx="8"/>
+  <text x="100" y="32" font-family="Poppins, Arial, sans-serif" font-size="18" font-weight="700" fill="white" text-anchor="middle">BranskoTel</text>
+</svg>

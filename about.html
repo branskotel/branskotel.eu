@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About BranskoTel - Your Trusted Electronics Partner</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="animations.css">
+    <style>
+        /* Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f8f8;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header Styles */
+        .header {
+            background: #fff;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+
+        .logo {
+            height: 50px;
+            width: auto;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: #ff6600;
+        }
+
+        .nav-links .cta-button {
+            color: white !important;
+        }
+
+        .nav-links .cta-button:hover {
+            color: white !important;
+        }
+
+        /* Language Selector */
+        .language-selector {
+            position: relative;
+            margin: 0 1rem;
+        }
+
+        .language-selector select {
+            background: linear-gradient(135deg, #fff, #f8f8f8);
+            border: 2px solid #e5e5e5;
+            border-radius: 12px;
+            padding: 10px 35px 10px 15px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: #333;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            appearance: none;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+            min-width: 120px;
+        }
+
+        .language-selector select:hover {
+            border-color: #ff6600;
+            box-shadow: 0 4px 12px rgba(255, 102, 0, 0.15);
+            transform: translateY(-1px);
+        }
+
+        .language-selector select:focus {
+            outline: none;
+            border-color: #ff6600;
+            box-shadow: 0 0 0 3px rgba(255, 102, 0, 0.1), 0 4px 12px rgba(255, 102, 0, 0.15);
+        }
+
+        .language-selector::after {
+            content: '🌐';
+            position: absolute;
+            right: 12px;
+            top: 50%;
+            transform: translateY(-50%);
+            pointer-events: none;
+            font-size: 1.1rem;
+        }
+
+        .language-selector option {
+            padding: 8px 12px;
+            background: white;
+            color: #333;
+            font-weight: 500;
+        }
+
+        .cta-button {
+            background: #ff6600;
+            color: white !important;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .cta-button:hover {
+            background: #e55a00;
+            color: white !important;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(255, 102, 0, 0.3);
+        }
+
+        .mobile-menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: #333;
+            cursor: pointer;
+        }
+
+        /* Page Header */
+        .page-header {
+            background: white;
+            padding: 60px 0;
+            text-align: center;
+        }
+
+        .page-header h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            color: #333;
+            margin-bottom: 1rem;
+        }
+
+        .page-header p {
+            font-size: 1.25rem;
+            color: #666;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* About Content */
+        .about-section {
+            padding: 80px 0;
+            background: #f8f8f8;
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .about-text {
+            padding: 2rem 0;
+        }
+
+        .about-text h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #333;
+            margin-bottom: 2rem;
+        }
+
+        .about-text p {
+            font-size: 1.125rem;
+            line-height: 1.8;
+            color: #666;
+            margin-bottom: 1.5rem;
+        }
+
+        .about-image {
+            text-align: center;
+        }
+
+        .about-image img {
+            width: 100%;
+            max-width: 500px;
+            height: auto;
+            border-radius: 16px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+
+        /* Values Section */
+        .values-section {
+            padding: 80px 0;
+            background: white;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 3rem;
+            color: #333;
+        }
+
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .value-item {
+            background: #f8f8f8;
+            padding: 2rem;
+            border-radius: 16px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .value-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+        }
+
+        .value-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: #ff6600;
+        }
+
+        .value-item h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: #333;
+        }
+
+        .value-item p {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        /* Footer */
+        .footer {
+            background: #333;
+            color: white;
+            padding: 3rem 0 2rem;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .footer-links a {
+            color: #ccc;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: #ff6600;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid #555;
+            color: #ccc;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: white;
+                flex-direction: column;
+                padding: 1rem;
+                box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            }
+
+            .language-selector {
+                order: -1;
+                margin: 0 0.5rem 0 0;
+            }
+
+            .language-selector select {
+                padding: 8px 30px 8px 12px;
+                font-size: 0.8rem;
+                min-width: 100px;
+            }
+
+            .language-selector::after {
+                right: 8px;
+                font-size: 1rem;
+            }
+
+            .mobile-menu-toggle {
+                display: block;
+            }
+
+            .page-header h1 {
+                font-size: 2.5rem;
+            }
+
+            .about-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .about-text h2 {
+                font-size: 2rem;
+            }
+
+            .footer-content {
+                flex-direction: column;
+                gap: 2rem;
+                text-align: center;
+            }
+
+            .footer-links {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 15px;
+            }
+
+            .page-header h1 {
+                font-size: 2rem;
+            }
+
+            .about-text h2 {
+                font-size: 1.75rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <!-- Logo -->
+                <div class="logo-container">
+                    <img src="branskotel.png" alt="BranskoTel" class="logo">
+                </div>
+
+                <!-- Navigation -->
+                <nav>
+                    <ul class="nav-links">
+                        <li><a href="index.html" data-translate="nav.home">Home</a></li>
+                        <li><a href="shop.html" data-translate="nav.shop">Shop</a></li>
+                        <li><a href="about.html" data-translate="nav.about">About</a></li>
+                        <li><a href="contact.html" data-translate="nav.contact">Contact</a></li>
+                        <li><a href="privacy.html" data-translate="nav.privacy">Privacy Policy</a></li>
+                        <li><a href="contact.html" class="cta-button" data-translate="nav.quote">Request Wholesale Quote</a></li>
+                    </ul>
+                    <div class="language-selector">
+                        <select id="languageSelect" onchange="changeLanguage(this.value)">
+                            <option value="en">🇬🇧 English</option>
+                            <option value="pl">🇵🇱 Polski</option>
+                            <option value="fr">🇫🇷 Français</option>
+                            <option value="ar">🇸🇦 العربية</option>
+                            <option value="cs">🇨🇿 Čeština</option>
+                        </select>
+                    </div>
+                    <button class="mobile-menu-toggle">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1 data-translate="about.pageTitle">About BranskoTel</h1>
+            <p data-translate="about.pageSubtitle">Your trusted European partner for wholesale and retail mobile phones, tablets, and electronics.</p>
+        </div>
+    </section>
+
+    <!-- About Content Section -->
+    <section class="about-section">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2 data-translate="about.whoWeAre">Who We Are</h2>
+                    <p data-translate="about.description1">BranskoTel.eu is a Poland-based supplier of mobile phones and electronics, offering both wholesale and individual sales.</p>
+                    <p data-translate="about.description2">We deliver the latest iPhones, Android devices, tablets, and accessories to retailers, businesses, and consumers across the EU from our headquarters in Kraków.</p>
+                    <p data-translate="about.description3">Our mission is simple — provide quality, reliability, and affordability with every device we ship.</p>
+                    <p data-translate="about.description4">Built on trust and transparency, BranskoTel helps partners scale their tech sales with confidence.</p>
+                </div>
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1605902711622-cfb43c4437b5?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Modern electronics store interior">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Values Section -->
+    <section class="values-section">
+        <div class="container">
+            <h2 class="section-title" data-translate="about.valuesTitle">Our Values</h2>
+            <div class="values-grid">
+                <div class="value-item">
+                    <div class="value-icon">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <h3 data-translate="about.trust.title">Trust</h3>
+                    <p data-translate="about.trust.description">We build lasting relationships with our partners through transparency, reliability, and consistent quality in every transaction.</p>
+                </div>
+                <div class="value-item">
+                    <div class="value-icon">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h3 data-translate="about.quality.title">Quality</h3>
+                    <p data-translate="about.quality.description">Only authentic products from authorized distributors, ensuring every device meets the highest standards and comes with full warranties.</p>
+                </div>
+                <div class="value-item">
+                    <div class="value-icon">
+                        <i class="fas fa-rocket"></i>
+                    </div>
+                    <h3 data-translate="about.innovation.title">Innovation</h3>
+                    <p data-translate="about.innovation.description">We stay ahead of technology trends, bringing you the latest devices and solutions to keep your business competitive.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="logo-container">
+                    <img src="branskotel.png" alt="BranskoTel" class="logo" style="filter: brightness(0) invert(1);">
+                </div>
+                <nav>
+                    <ul class="footer-links">
+                        <li><a href="index.html" data-translate="nav.home">Home</a></li>
+                        <li><a href="shop.html" data-translate="nav.shop">Shop</a></li>
+                        <li><a href="about.html" data-translate="nav.about">About</a></li>
+                        <li><a href="contact.html" data-translate="nav.contact">Contact</a></li>
+                        <li><a href="privacy.html" data-translate="nav.privacy">Privacy Policy</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 BranskoTel.eu — All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Mobile menu toggle
+        document.querySelector('.mobile-menu-toggle').addEventListener('click', function() {
+            const navLinks = document.querySelector('.nav-links');
+            navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
+        });
+    </script>
+    <script src="script.js"></script>
+    
+    <!-- Translation System -->
+    <script>
+        // Comprehensive translation dictionary for about page
+        const translations = {
+            en: {
+                'nav.home': 'Home',
+                'nav.shop': 'Shop',
+                'nav.about': 'About',
+                'nav.contact': 'Contact',
+                'nav.privacy': 'Privacy Policy',
+                'nav.quote': 'Request Wholesale Quote',
+                'about.pageTitle': 'About BranskoTel',
+                'about.pageSubtitle': 'Your trusted European partner for wholesale and retail mobile phones, tablets, and electronics.',
+                'about.whoWeAre': 'Who We Are',
+                'about.description1': 'BranskoTel.eu is a Poland-based supplier of mobile phones and electronics, offering both wholesale and individual sales.',
+                'about.description2': 'We deliver the latest iPhones, Android devices, tablets, and accessories to retailers, businesses, and consumers across the EU from our headquarters in Kraków.',
+                'about.description3': 'Our mission is simple — provide quality, reliability, and affordability with every device we ship.',
+                'about.description4': 'Built on trust and transparency, BranskoTel helps partners scale their tech sales with confidence.',
+                'about.valuesTitle': 'Our Values',
+                'about.trust.title': 'Trust',
+                'about.trust.description': 'We build lasting relationships with our partners through transparency, reliability, and consistent quality in every transaction.',
+                'about.quality.title': 'Quality',
+                'about.quality.description': 'Only authentic products from authorized distributors, ensuring every device meets the highest standards and comes with full warranties.',
+                'about.innovation.title': 'Innovation',
+                'about.innovation.description': 'We stay ahead of technology trends, bringing you the latest devices and solutions to keep your business competitive.'
+            },
+            pl: {
+                'nav.home': 'Strona główna',
+                'nav.shop': 'Sklep',
+                'nav.about': 'O nas',
+                'nav.contact': 'Kontakt',
+                'nav.privacy': 'Polityka prywatności',
+                'nav.quote': 'Poproś o wycenę hurtową',
+                'about.pageTitle': 'O BranskoTel',
+                'about.pageSubtitle': 'Twój zaufany europejski partner w handlu telefonami komórkowymi, tabletami i elektroniką.',
+                'about.whoWeAre': 'Kim jesteśmy',
+                'about.description1': 'BranskoTel.eu to polski dostawca telefonów komórkowych i elektroniki, oferujący sprzedaż hurtową i indywidualną.',
+                'about.description2': 'Dostarczamy najnowsze iPhone\'y, urządzenia Android, tablety i akcesoria do sprzedawców, firm i konsumentów w całej UE z naszej siedziby w Krakowie.',
+                'about.description3': 'Nasza misja jest prosta — zapewniać jakość, niezawodność i przystępność każdego wysyłanego urządzenia.',
+                'about.description4': 'Zbudowany na zaufaniu i przejrzystości, BranskoTel pomaga partnerom skalować sprzedaż technologii z pewnością.',
+                'about.valuesTitle': 'Nasze wartości',
+                'about.trust.title': 'Zaufanie',
+                'about.trust.description': 'Budujemy trwałe relacje z naszymi partnerami poprzez przejrzystość, niezawodność i stałą jakość w każdej transakcji.',
+                'about.quality.title': 'Jakość',
+                'about.quality.description': 'Tylko autentyczne produkty od autoryzowanych dystrybutorów, zapewniające że każde urządzenie spełnia najwyższe standardy i posiada pełną gwarancję.',
+                'about.innovation.title': 'Innowacja',
+                'about.innovation.description': 'Jesteśmy o krok przed trendami technologicznymi, dostarczając najnowsze urządzenia i rozwiązania, aby Twoja firma pozostała konkurencyjna.'
+            },
+            fr: {
+                'nav.home': 'Accueil',
+                'nav.shop': 'Boutique',
+                'nav.about': 'À propos',
+                'nav.contact': 'Contact',
+                'nav.privacy': 'Politique de confidentialité',
+                'nav.quote': 'Demander un devis de gros',
+                'about.pageTitle': 'À propos de BranskoTel',
+                'about.pageSubtitle': 'Votre partenaire européen de confiance pour téléphones mobiles, tablettes et électronique en gros et au détail.',
+                'about.whoWeAre': 'Qui nous sommes',
+                'about.description1': 'BranskoTel.eu est un fournisseur basé en Pologne de téléphones mobiles et d\'électronique, offrant des ventes en gros et individuelles.',
+                'about.description2': 'Nous livrons les derniers iPhones, appareils Android, tablettes et accessoires aux détaillants, entreprises et consommateurs à travers l\'UE depuis notre siège à Cracovie.',
+                'about.description3': 'Notre mission est simple — fournir qualité, fiabilité et accessibilité avec chaque appareil que nous expédions.',
+                'about.description4': 'Basé sur la confiance et la transparence, BranskoTel aide les partenaires à faire croître leurs ventes technologiques avec confiance.',
+                'about.valuesTitle': 'Nos valeurs',
+                'about.trust.title': 'Confiance',
+                'about.trust.description': 'Nous construisons des relations durables avec nos partenaires grâce à la transparence, la fiabilité et une qualité constante dans chaque transaction.',
+                'about.quality.title': 'Qualité',
+                'about.quality.description': 'Seulement des produits authentiques de distributeurs autorisés, garantissant que chaque appareil répond aux plus hauts standards et vient avec une garantie complète.',
+                'about.innovation.title': 'Innovation',
+                'about.innovation.description': 'Nous restons en avance sur les tendances technologiques, vous apportant les derniers appareils et solutions pour garder votre entreprise compétitive.'
+            },
+            ar: {
+                'nav.home': 'الرئيسية',
+                'nav.shop': 'المتجر',
+                'nav.about': 'من نحن',
+                'nav.contact': 'اتصل بنا',
+                'nav.privacy': 'سياسة الخصوصية',
+                'nav.quote': 'طلب عرض أسعار الجملة',
+                'about.pageTitle': 'حول BranskoTel',
+                'about.pageSubtitle': 'شريكك الأوروبي الموثوق في الهواتف المحمولة والأجهزة اللوحية والإلكترونيات بالجملة والتجزئة.',
+                'about.whoWeAre': 'من نحن',
+                'about.description1': 'BranskoTel.eu هو مورد مقره بولندا للهواتف المحمولة والإلكترونيات، يقدم مبيعات بالجملة والفردية.',
+                'about.description2': 'نقوم بتوصيل أحدث أجهزة iPhone وأجهزة Android والأجهزة اللوحية والإكسسوارات إلى تجار التجزئة والشركات والمستهلكين في جميع أنحاء الاتحاد الأوروبي من مقرنا في كراكوف.',
+                'about.description3': 'مهمتنا بسيطة — توفير الجودة والموثوقية والقدرة على تحمل التكاليف مع كل جهاز نشحنه.',
+                'about.description4': 'مبني على الثقة والشفافية، يساعد BranskoTel الشركاء على توسيع مبيعاتهم التقنية بثقة.',
+                'about.valuesTitle': 'قيمنا',
+                'about.trust.title': 'الثقة',
+                'about.trust.description': 'نبني علاقات دائمة مع شركائنا من خلال الشفافية والموثوقية والجودة المستمرة في كل معاملة.',
+                'about.quality.title': 'الجودة',
+                'about.quality.description': 'منتجات أصلية فقط من موزعين معتمدين، مما يضمن أن كل جهاز يلبي أعلى المعايير ويأتي مع ضمان كامل.',
+                'about.innovation.title': 'الابتكار',
+                'about.innovation.description': 'نبقى في المقدمة في اتجاهات التكنولوجيا، نجلب لك أحدث الأجهزة والحلول للحفاظ على قدرة شركتك التنافسية.'
+            },
+            cs: {
+                'nav.home': 'Domů',
+                'nav.shop': 'Obchod',
+                'nav.about': 'O nás',
+                'nav.contact': 'Kontakt',
+                'nav.privacy': 'Zásady ochrany osobních údajů',
+                'nav.quote': 'Požádat o velkoobchodní nabídku',
+                'about.pageTitle': 'O BranskoTel',
+                'about.pageSubtitle': 'Váš důvěryhodný evropský partner pro mobilní telefony, tablety a elektroniku ve velkém i maloobchodě.',
+                'about.whoWeAre': 'Kdo jsme',
+                'about.description1': 'BranskoTel.eu je polský dodavatel mobilních telefonů a elektroniky, nabízející velkoobchodní i individuální prodej.',
+                'about.description2': 'Dodáváme nejnovější iPhony, Android zařízení, tablety a příslušenství maloobchodníkům, firmám a spotřebitelům po celé EU z našeho sídla v Krakově.',
+                'about.description3': 'Naše mise je jednoduchá — poskytovat kvalitu, spolehlivost a dostupnost s každým zařízením, které dodáváme.',
+                'about.description4': 'Postavený na důvěře a transparentnosti, BranskoTel pomáhá partnerům rozšiřovat jejich technologické prodeje s důvěrou.',
+                'about.valuesTitle': 'Naše hodnoty',
+                'about.trust.title': 'Důvěra',
+                'about.trust.description': 'Budujeme trvalé vztahy s našimi partnery prostřednictvím transparentnosti, spolehlivosti a konzistentní kvality v každé transakci.',
+                'about.quality.title': 'Kvalita',
+                'about.quality.description': 'Pouze autentické produkty od autorizovaných distributorů, zajišťující že každé zařízení splňuje nejvyšší standardy a přichází s plnou zárukou.',
+                'about.innovation.title': 'Inovace',
+                'about.innovation.description': 'Zůstáváme před technologickými trendy, přinášíme vám nejnovější zařízení a řešení pro udržení konkurenceschopnosti vaší firmy.'
+            }
+        };
+
+        // Language detection and switching function
+        function changeLanguage(language) {
+            // Update HTML lang attribute for SEO
+            document.documentElement.lang = language;
+            
+            // Update page title for SEO
+            const titles = {
+                en: 'About BranskoTel - Your Trusted Electronics Partner',
+                pl: 'O BranskoTel - Twój zaufany partner w elektronice',
+                fr: 'À propos de BranskoTel - Votre partenaire de confiance en électronique',
+                ar: 'حول BranskoTel - شريكك الموثوق في الإلكترونيات',
+                cs: 'O BranskoTel - Váš důvěryhodný partner v elektronice'
+            };
+            document.title = titles[language];
+
+            // Apply translations to all elements with data-translate attribute
+            const elements = document.querySelectorAll('[data-translate]');
+            elements.forEach(element => {
+                const key = element.getAttribute('data-translate');
+                if (translations[language] && translations[language][key]) {
+                    element.textContent = translations[language][key];
+                }
+            });
+
+            // Handle RTL for Arabic
+            if (language === 'ar') {
+                document.body.style.direction = 'rtl';
+                document.body.style.textAlign = 'right';
+            } else {
+                document.body.style.direction = 'ltr';
+                document.body.style.textAlign = 'left';
+            }
+
+            // Save language preference
+            localStorage.setItem('selectedLanguage', language);
+            
+            // Update URL for SEO (optional)
+            const url = new URL(window.location);
+            url.searchParams.set('lang', language);
+            window.history.replaceState({}, '', url);
+        }
+
+        // Initialize language on page load
+        function initializeLanguage() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const urlLang = urlParams.get('lang');
+            const savedLang = localStorage.getItem('selectedLanguage');
+            const browserLang = navigator.language.split('-')[0];
+            
+            // Priority: URL parameter > saved preference > browser language > English
+            const defaultLang = urlLang || savedLang || (translations[browserLang] ? browserLang : 'en');
+            
+            document.getElementById('languageSelect').value = defaultLang;
+            changeLanguage(defaultLang);
+        }
+
+        // Initialize when page loads
+        document.addEventListener('DOMContentLoaded', initializeLanguage);
+    </script>
+</body>
+</html>
